@@ -1,21 +1,7 @@
-import { JSX } from 'react'
-import { View, Text, SafeAreaView } from 'react-native'
+import { Redirect } from 'expo-router';
 
-const Index = (): JSX.Element => {
-  return (
-    <SafeAreaView style={{ flex: 1, backgroundColor: '#fff' }}>
-      <View style={{ 
-        flex: 1, 
-        justifyContent: 'center', 
-        alignItems: 'center',
-        padding: 16 
-      }}>
-        <Text style={{ fontSize: 24, fontWeight: 'bold' }}>
-          Hello World
-        </Text>
-      </View>
-    </SafeAreaView>
-  )
-}
+const Index = () => {
+  return <Redirect href='memo/list' />
+};
 
 export default Index
