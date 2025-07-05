@@ -1,8 +1,10 @@
 import { View, Text, ScrollView, StyleSheet } from "react-native";
 import Header from "../../components/Header";
 import CircleButton from "../../components/CircleButton";
+import { JSX } from "react";
+import Icon from "../../components/Icon";
 
-const Detail = () => {
+const Detail = (): JSX.Element => {
   return (
     <View style={styles.container}>
       <Header />
@@ -17,7 +19,9 @@ const Detail = () => {
           本文用
         </Text>
       </ScrollView>
-      <CircleButton style={{ top: 160, bottom: 'auto' }}>+</CircleButton>
+      <CircleButton style={{ top: 160, bottom: 'auto' }}>
+        <Icon name='pencil' size={40} color='#ffffff' />
+      </CircleButton>
     </View>
   );
 };
