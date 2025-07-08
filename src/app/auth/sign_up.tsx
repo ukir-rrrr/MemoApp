@@ -3,6 +3,12 @@ import { View, Text, StyleSheet, TouchableOpacity } from "react-native";
 import Header from "../../components/Header";
 import Button from "../../components/Button";
 import CustomTextInput from "../../components/CustomTextInput";
+import { Link, router } from "expo-router";
+
+const handlePress = (): void => {
+  // 会員登録
+  router.push('/memo/list')
+}
 
 const SignUp = (): JSX.Element => {
   return (
@@ -10,14 +16,16 @@ const SignUp = (): JSX.Element => {
       <Header />
       <View style={styles.inner}>
         <Text style={styles.title}>Sign UP</Text>
-        <CustomTextInput value="email"/>
-        <CustomTextInput value="pass"/>
-        <Button label="Submit" />
+        <CustomTextInput value="email" />
+        <CustomTextInput value="pass" />
+        <Button label="Submit" onPress={handlePress} />
         <View style={styles.footer}>
           <Text style={styles.footerText}>Already registered?</Text>
-          <TouchableOpacity>
-            <Text style={styles.footerLink}>Log In</Text>
-          </TouchableOpacity>
+          <Link href="/auth/log_in" asChild>
+            <TouchableOpacity>
+              <Text style={styles.footerLink}>Log In</Text>
+            </TouchableOpacity>
+          </Link>
         </View>
       </View>
     </View>
@@ -27,31 +35,31 @@ const SignUp = (): JSX.Element => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#F0F4F8'
+    backgroundColor: "#F0F4F8",
   },
   inner: {
     paddingVertical: 24,
-    paddingHorizontal: 27
+    paddingHorizontal: 27,
   },
   title: {
     fontSize: 24,
     lineHeight: 32,
-    fontWeight: 'bold',
+    fontWeight: "bold",
     marginBottom: 24,
   },
   footer: {
-    flexDirection: 'row',
+    flexDirection: "row",
   },
   footerText: {
     fontSize: 14,
     lineHeight: 24,
     marginRight: 8,
-    color: '#000000'
+    color: "#000000",
   },
   footerLink: {
     fontSize: 14,
     lineHeight: 24,
-    color: '#467FD3'
+    color: "#467FD3",
   },
 });
 
